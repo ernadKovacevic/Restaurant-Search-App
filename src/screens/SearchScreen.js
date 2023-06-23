@@ -8,7 +8,6 @@ import ResultsList from "../components/ResultsList";
 const SearchScreen = () => {
     const [term, setTerm] = useState('');
     const [results, errorMessage, searchApi] = useResults();
-
     // const lowPriceResults = results.filter((result) => result.price === '$');
     // const mediumPriceResults = results.filter((result) => result.price === '$$');
     // const highPriceResults = results.filter((result) => result.price === '$$$');
