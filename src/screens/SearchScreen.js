@@ -1,8 +1,16 @@
 import {View, Text, StyleSheet} from "react-native";
+import SearchBar from "../components/SearchBar";
+import {useState} from "react";
 
 const SearchScreen = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+
     return <View>
-        <Text>Search Screen</Text>
+        <SearchBar term={searchTerm}
+                   onSearchTermChange={(value) => setSearchTerm(value)}
+                   onSearchTermSubmit={() => console.log('ernad') }
+        />
+        <Text>Search Screen {searchTerm}</Text>
     </View>
 }
 
