@@ -1,6 +1,5 @@
 import {View, Text, StyleSheet, TextInput} from "react-native";
 import { Feather } from '@expo/vector-icons';
-import {useState} from "react";
 
 const SearchBar = ({term, onSearchTermChange, onSearchTermSubmit}) => {
 
