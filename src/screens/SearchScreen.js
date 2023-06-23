@@ -1,6 +1,6 @@
-import {View, Text, StyleSheet} from "react-native";
-import SearchBar from "../components/SearchBar";
 import {useEffect, useState} from "react";
+import {View, Text, StyleSheet, ScrollView} from "react-native";
+import SearchBar from "../components/SearchBar";
 import yelp from "../api/yelp";
 import useResults from "../hooks/useResults";
 import ResultsList from "../components/ResultsList";
@@ -26,9 +26,11 @@ const SearchScreen = () => {
         />
         {errorMessage !== '' && <Text>{errorMessage}</Text>}
         <Text>We have found {results.length} results</Text>
-        <ResultsList results={filterByPrice('$')} title='Cost Effective'/>
-        <ResultsList results={filterByPrice('$$')} title='Bit Pricer'/>
-        <ResultsList results={filterByPrice('$$$')} title='Big Spender!'/>
+        <ScrollView>
+            <ResultsList results={filterByPrice('$')} title='Cost Effective'/>
+            <ResultsList results={filterByPrice('$$')} title='Bit Pricer'/>
+            <ResultsList results={filterByPrice('$$$')} title='Big Spender!'/>
+        </ScrollView>
     </View>
 }
 
